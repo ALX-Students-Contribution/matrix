@@ -2,7 +2,7 @@
 
 int main(int argc, char *argv[])
 {
-        int size = atoi(argv[1]);
+        int size;
         int i, j, row;
 
         if (argc < 2)
@@ -11,6 +11,7 @@ int main(int argc, char *argv[])
                 return 1;
         }
 
+	size = atoi(argv[1]);
 
         int **matrix;
 
@@ -18,7 +19,7 @@ int main(int argc, char *argv[])
 
         if (matrix == NULL)
         {
-                return (1);
+                return (400);
         }
 
         for (row = 0; row < size; row++)
@@ -27,7 +28,7 @@ int main(int argc, char *argv[])
 
                 if (matrix[row] == NULL)
                 {
-                        return (1);
+                        return (400);
                 }
         }
 
@@ -47,14 +48,15 @@ int main(int argc, char *argv[])
         {
                 for(j = 0; j < size; j++)
                 {
-                        scanf("%d", &matrix[i][j]);
-                }
+			scanf("%d%*c", &matrix[i][j]);
+		}
         }
+
         for (i = 0; i < size; i++)
         {
                 for(j = 0; j < size; j++)
                 {
-                        printf(" %c", matrix[i][j]);
+                        printf(" %i", matrix[i][j]);
                 }
                 printf("\n");
         }
@@ -63,6 +65,7 @@ int main(int argc, char *argv[])
         {
                 free(matrix[row]);
         }
+
         free(matrix);
 
         return (0);
