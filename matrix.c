@@ -5,7 +5,7 @@ int main(int argc, char *argv[])
         int size = atoi(argv[1]);
         int i, j, row;
 
-        if (argc != 2)
+        if (argc < 2)
         {
                 printf("usage: ./matrix <size>\n");
                 return 1;
@@ -64,5 +64,6 @@ int main(int argc, char *argv[])
                 free(matrix[row]);
         }
         free(matrix);
+
         return (0);
 }
