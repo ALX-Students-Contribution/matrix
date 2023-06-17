@@ -47,7 +47,7 @@ int main(int argc, char *argv[])
         {
                 for(j = 0; j < size; j++)
                 {
-                        scanf("%c", &matrix[i][j]);
+                        scanf("%d", &matrix[i][j]);
                 }
         }
         for (i = 0; i < size; i++)
